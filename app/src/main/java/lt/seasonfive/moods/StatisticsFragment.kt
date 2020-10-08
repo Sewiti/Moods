@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import lt.seasonfive.moods.databinding.FragmentJournalBinding
+import lt.seasonfive.moods.databinding.FragmentStatisticsBinding
 
 
-class JournalFragment : Fragment() {
+class StatisticsFragment : Fragment() {
 
-    private lateinit var binding: FragmentJournalBinding
+    private lateinit var binding: FragmentStatisticsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,7 @@ class JournalFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_journal, container, false)
+            inflater, R.layout.fragment_statistics, container, false)
 
         return binding.root
     }

@@ -10,11 +10,13 @@
         android:name="lt.seasonfive.moods.JournalFragment"
         android:label="fragment_journal"
         tools:layout="@layout/fragment_journal" />
+
     <fragment
         android:id="@+id/introFragment"
+        android:tag="introFragmentTag"
         android:name="lt.seasonfive.moods.IntroFragment"
         android:label="fragment_intro"
-        tools:layout="@layout/fragment_intro" >
+        tools:layout="@layout/fragment_intro">
         <action
             android:id="@+id/action_introFragment_to_journalFragment"
             app:destination="@id/journalFragment"
@@ -23,4 +25,5 @@
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
     </fragment>
+
 </navigation>
