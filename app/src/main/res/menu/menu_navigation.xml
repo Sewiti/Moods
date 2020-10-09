@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/journalFragment"
-        android:icon="@android:drawable/btn_star_big_on"
+        android:icon="@drawable/list_alt_white"
         android:title="Journal" />
 
     <item
         android:id="@+id/statisticsFragment"
-        android:icon="@android:drawable/btn_star_big_on"
+        android:icon="@drawable/outline_dashboard_white"
         android:title="Statistics" />
 
     <item
         android:id="@+id/calendarFragment"
-        android:icon="@android:drawable/btn_star_big_on"
+        android:icon="@drawable/calendar_today_white"
         android:title="Calendar" />
 
     <item
         android:id="@+id/settingsFragment"
-        android:icon="@android:drawable/btn_star_big_on"
+        android:icon="@drawable/settings_white"
         android:title="Settings" />
 
 </menu>

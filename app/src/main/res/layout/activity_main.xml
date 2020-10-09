@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
@@ -22,8 +22,9 @@
             android:layout_height="58dp"
             android:layout_alignParentBottom="true"
             app:elevation="2dp"
-            app:itemBackground="@android:color/darker_gray"
+            app:itemBackground="?android:attr/windowBackground"
             app:itemIconSize="24dp"
+            app:labelVisibilityMode="labeled"
             app:menu="@menu/menu_navigation" />
 
     </RelativeLayout>
