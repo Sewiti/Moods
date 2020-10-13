@@ -3,6 +3,8 @@ package lt.seasonfive.moods
 import android.app.PendingIntent.getActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -20,6 +22,15 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         navMenuItemSelect()
+
+        fabSelect()
+    }
+
+
+    private fun fabSelect() {
+        binding.bottomFab.setOnClickListener {view: View ->
+            Toast.makeText(this, "Fab button pressed", Toast.LENGTH_LONG).show()
+        }
     }
 
 

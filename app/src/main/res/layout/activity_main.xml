@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
@@ -19,13 +19,24 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
             app:elevation="2dp"
             app:itemBackground="?android:attr/windowBackground"
             app:itemIconSize="24dp"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/menu_navigation" />
 
-    </RelativeLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bottomFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:layout_anchorGravity="center"
+            app:layout_anchor="@id/bottomNav"
+            app:srcCompat="@drawable/ic_add_circle"
+            app:fabCustomSize="40dp"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
