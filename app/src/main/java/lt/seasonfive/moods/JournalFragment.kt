@@ -16,6 +16,7 @@ class JournalFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        (activity as MainActivity).binding.coordinatorBottom.visibility = View.VISIBLE
     }
 
     override fun onCreateView(

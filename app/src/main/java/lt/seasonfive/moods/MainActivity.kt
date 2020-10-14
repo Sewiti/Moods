@@ -1,6 +1,7 @@
 package lt.seasonfive.moods
 
 import android.app.PendingIntent.getActivity
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
@@ -13,8 +14,7 @@ import lt.seasonfive.moods.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var currentFragment: Fragment
+    lateinit var binding: ActivityMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun replaceFragment(fragment: Fragment) {
+    fun replaceFragment(fragment: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
 
         fragmentTransaction.replace(R.id.navHostFragment, fragment)

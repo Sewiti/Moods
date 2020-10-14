@@ -13,6 +13,11 @@
         android:title="Statistics" />
 
     <item
+        android:id="@+id/emptyMenuItem"
+        android:enabled="false"
+        android:title="" />
+
+    <item
         android:id="@+id/calendarFragment"
         android:icon="@drawable/calendar_today_white"
         android:title="Calendar" />
@@ -21,5 +26,4 @@
         android:id="@+id/settingsFragment"
         android:icon="@drawable/settings_white"
         android:title="Settings" />
-
 </menu>
