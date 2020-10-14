@@ -37,14 +37,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginTop="60dp"
-                android:backgroundTint="@color/Orange"
+                android:backgroundTint="@color/pastelPurple2"
                 android:paddingBottom="0dp"
-                android:theme="@style/Theme.MaterialComponents.Light"
+                android:theme="@style/NavigationBar"
                 app:contentInsetStart="0dp"
                 app:contentInsetStartWithNavigation="0dp"
                 app:fabAlignmentMode="center"
-                app:fabCradleMargin="10dp"
-                app:fabCradleRoundedCornerRadius="25dp"
+                app:fabCradleMargin="8dp"
+                app:fabCradleRoundedCornerRadius="15dp"
                 app:fabCradleVerticalOffset="0dp">
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -66,8 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_add_circle"
-                android:tint="@color/colorPrimary"
-                app:backgroundTint="@color/Yellow"
+                android:tint="@color/white"
+                app:backgroundTint="@color/pastelOrange2"
                 app:layout_anchor="@id/bottomBar" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

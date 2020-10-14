@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Moods</string>
-    <string name="introTitle">Mood</string>
+    <string name="introTitle">moods</string>
+    <string name="introDescription">Write moods every morning, every day, every evening\nand perform reality checks throughout the day and you\nwill soon achieve full control over your own moods.\nIt is key for best life experience. \'moods\' app is a great\ntoolto have in your journey of life. </string>
 </resources>

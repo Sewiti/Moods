@@ -5,4 +5,10 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="Yellow">#FFF59C</color>
     <color name="Orange">#FFCB7F</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="pastelPurple1">#F3B0C3</color>
+    <color name="pastelPurple2">#FFC4D5</color>
+    <color name="pastelOrange1">#FFC7B6</color>
+    <color name="pastelOrange2">#FAC4B3</color>
 </resources>
