@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intro_nav_graph"
+    app:startDestination="@id/introWelcomeFragment">
+
+    <fragment
+        android:id="@+id/introWelcomeFragment"
+        android:name="lt.seasonfive.moods.IntroWelcomeFragment"
+        android:label="IntroWelcomeFragment"
+        tools:layout="@layout/fragment_intro_welcome">
+        <action
+            android:id="@+id/action_introWelcomeFragment_to_introGetStartedFragment"
+            app:destination="@id/introGetStartedFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/introGetStartedFragment"
+        android:name="lt.seasonfive.moods.IntroGetStartedFragment"
+        android:label="IntroGetStartedFragment"
+        tools:layout="@layout/fragment_intro_get_started" />
+</navigation>

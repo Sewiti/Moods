@@ -7,11 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_intro.view.*
-import java.util.*
 
-class JournalAdapter(private var dates: List<String>, private var descriptions: List<String>,
-                     private var images: List<Int>) : RecyclerView.Adapter<JournalAdapter.JournalViewHolder>() {
+class JournalAdapter(
+    private var dates: List<String>, private var descriptions: List<String>,
+    private var images: List<Int>
+) : RecyclerView.Adapter<JournalAdapter.JournalViewHolder>() {
 
     inner class JournalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemDate: TextView = itemView.findViewById(R.id.item_dateTime)
@@ -21,7 +21,11 @@ class JournalAdapter(private var dates: List<String>, private var descriptions: 
         init {
             itemView.setOnClickListener { view: View ->
                 val position: Int = adapterPosition
-                Toast.makeText(itemView.context, "Clicked on item ${position + 1}", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    itemView.context,
+                    "Clicked on item ${position + 1}",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
     }
@@ -31,7 +35,8 @@ class JournalAdapter(private var dates: List<String>, private var descriptions: 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JournalViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.journal_item_layout, parent, false)
+        val v =
+            LayoutInflater.from(parent.context).inflate(R.layout.journal_item_layout, parent, false)
         return JournalViewHolder(v)
     }
 
@@ -40,8 +45,4 @@ class JournalAdapter(private var dates: List<String>, private var descriptions: 
         holder.itemDescription.text = descriptions[position]
         holder.itemImage.setImageResource(images[position])
     }
-
-
-
-
 }

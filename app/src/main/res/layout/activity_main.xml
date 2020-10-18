@@ -7,23 +7,19 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/shape_gradient2"
         android:clipChildren="false"
         android:fitsSystemWindows="true">
 
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/navHostFragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph" />
+            android:layout_marginBottom="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/coordinatorBottom"
@@ -36,7 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/pastelOrange1"
                 android:backgroundTint="@color/pastelPurple2"
                 android:paddingBottom="0dp"
                 android:theme="@style/NavigationBar"
@@ -65,6 +62,7 @@
                 android:id="@+id/bottomFab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/new_mood_content_desc"
                 android:src="@drawable/ic_add_circle"
                 android:tint="@color/white"
                 app:backgroundTint="@color/pastelOrange2"

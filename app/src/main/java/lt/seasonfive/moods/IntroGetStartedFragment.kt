@@ -6,11 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import lt.seasonfive.moods.databinding.FragmentCalendarBinding
+import lt.seasonfive.moods.databinding.FragmentIntroGetStartedBinding
 
-class CalendarFragment : Fragment() {
-    private lateinit var binding: FragmentCalendarBinding
-
+class IntroGetStartedFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -19,7 +17,16 @@ class CalendarFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calendar, container, false)
+        val binding = DataBindingUtil.inflate<FragmentIntroGetStartedBinding>(
+            inflater,
+            R.layout.fragment_intro_get_started,
+            container,
+            false
+        )
+
+        binding.nextFAB.setOnClickListener {
+            activity?.finish()
+        }
 
         return binding.root
     }

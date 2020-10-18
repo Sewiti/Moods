@@ -19,9 +19,6 @@ class JournalFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Set bottom navigation to visible after intro screen
-        (activity as MainActivity).binding.coordinatorBottom.visibility = View.VISIBLE
     }
 
     override fun onCreateView(
@@ -31,6 +28,9 @@ class JournalFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_journal, container, false
         )
+
+        // Set bottom navigation to visible after intro screen
+        (activity as MainActivity).binding.coordinatorBottom.visibility = View.VISIBLE
 
         // Set recycler view adapter
         binding.journalItemList.adapter = JournalAdapter(datesList, descriptionsList, imagesList)
@@ -47,7 +47,7 @@ class JournalFragment : Fragment() {
     }
 
     private fun postToList() {
-        for(i in 1..10)
+        for (i in 1..10)
             addItem("Kazkokia data", "Cia yra desc apie mano mood", R.mipmap.ic_launcher_round)
     }
 }

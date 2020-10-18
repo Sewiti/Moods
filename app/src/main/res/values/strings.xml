@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">Moods</string>
-    <string name="introTitle">moods</string>
+    <string name="introTitle">Moods</string>
     <string name="introDescription">Write moods every morning, every day, every evening\nand perform reality checks throughout the day and you\nwill soon achieve full control over your own moods.\nIt is key for best life experience. \'moods\' app is a great\ntoolto have in your journey of life. </string>
+    <string name="getStarted">Let\'s get started!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="new_mood_content_desc">New mood</string>
+    <string name="intro_next_fab_content_desc">Next</string>
+    <string name="sample_mood_date">Date when mood was added</string>
+    <string name="sample_mood_desc">Description about the mood</string>
+    <string name="mood_emoji_content_desc">Emoji</string>
+    <string name="bottom_nav_journal">Journal</string>
+    <string name="bottom_nav_stats">Statistics</string>
+    <string name="bottom_nav_calendar">Calendar</string>
+    <string name="bottom_nav_settings">Settings</string>
 </resources>

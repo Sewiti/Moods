@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import lt.seasonfive.moods.databinding.FragmentCalendarBinding
+import lt.seasonfive.moods.databinding.FragmentSettingsBinding
+import lt.seasonfive.moods.databinding.FragmentSettingsMenuBinding
 
-class CalendarFragment : Fragment() {
-    private lateinit var binding: FragmentCalendarBinding
+
+class SettingsMenuFragment : Fragment() {
+    private lateinit var binding: FragmentSettingsMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +21,8 @@ class CalendarFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calendar, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_settings_menu, container, false)
 
         return binding.root
     }
