@@ -5,7 +5,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/shape_gradient2"
+        tools:background="@drawable/shape_gradient"
         tools:context=".StatisticsFragment">
 
         <!-- TODO: Update blank fragment layout -->

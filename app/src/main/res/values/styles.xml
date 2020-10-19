@@ -3,9 +3,12 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/pastelOrange1</item>
-        <item name="colorPrimaryDark">@color/pastelPurple1</item>
-        <item name="colorAccent">@color/pastelPurple1</item>
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorPrimaryDark">@color/darkPurple</item>
+        <item name="colorAccent">@color/darkPurple</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="NavigationBar" parent="Theme.MaterialComponents.Light.NoActionBar">

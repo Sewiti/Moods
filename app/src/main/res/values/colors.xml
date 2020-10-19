@@ -7,6 +7,12 @@
     <color name="Orange">#FFCB7F</color>
     <color name="white">#FFFFFF</color>
 
+    <color name="pink">#FF857C</color>
+    <color name="lightPink">#FD848A</color>
+    <color name="purplish">#CD546A</color>
+    <color name="purple">#73648A</color>
+    <color name="darkPurple">#635676</color>
+
     <color name="pastelPurple1">#F3B0C3</color>
     <color name="pastelPurple2">#FFC4D5</color>
     <color name="pastelOrange1">#FFC7B6</color>
