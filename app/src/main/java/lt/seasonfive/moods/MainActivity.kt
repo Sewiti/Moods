@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import lt.seasonfive.moods.Intro.IntroActivity
+import lt.seasonfive.moods.Settings.SettingsFragment
 import lt.seasonfive.moods.databinding.ActivityMainBinding
 
 

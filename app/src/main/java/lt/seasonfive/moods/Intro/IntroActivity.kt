@@ -1,7 +1,8 @@
-package lt.seasonfive.moods
+package lt.seasonfive.moods.Intro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import lt.seasonfive.moods.R
 
 class IntroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

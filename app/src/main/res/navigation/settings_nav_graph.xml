@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/settingsMenuFragment"
-        android:name="lt.seasonfive.moods.SettingsMenuFragment"
+        android:name="lt.seasonfive.moods.Settings.SettingsMenuFragment"
         android:label="SettingsMenuFragment"
         tools:layout="@layout/fragment_settings_menu"/>
 

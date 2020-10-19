@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:background="@drawable/shape_gradient"
-        tools:context=".IntroGetStartedFragment">
+        tools:context=".Intro.IntroGetStartedFragment">
 
         <TextView
             android:id="@+id/textView"
@@ -27,9 +27,9 @@
             android:id="@+id/nextFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/pastelPurple1"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/lightPink"
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/arrow_forward_white"

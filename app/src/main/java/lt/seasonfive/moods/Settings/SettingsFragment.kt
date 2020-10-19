@@ -1,12 +1,11 @@
-package lt.seasonfive.moods
+package lt.seasonfive.moods.Settings
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import lt.seasonfive.moods.databinding.FragmentSettingsBinding
+import lt.seasonfive.moods.R
 
 
 class SettingsFragment : Fragment() {

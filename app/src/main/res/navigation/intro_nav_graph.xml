@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/introWelcomeFragment"
-        android:name="lt.seasonfive.moods.IntroWelcomeFragment"
+        android:name="lt.seasonfive.moods.Intro.IntroWelcomeFragment"
         android:label="IntroWelcomeFragment"
         tools:layout="@layout/fragment_intro_welcome">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/introGetStartedFragment"
-        android:name="lt.seasonfive.moods.IntroGetStartedFragment"
+        android:name="lt.seasonfive.moods.Intro.IntroGetStartedFragment"
         android:label="IntroGetStartedFragment"
         tools:layout="@layout/fragment_intro_get_started" />
 </navigation>
