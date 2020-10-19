@@ -40,14 +40,14 @@ class JournalFragment : Fragment() {
         return binding.root
     }
 
+    private fun postToList() {
+        for (i in 1..10)
+            addItem("Kazkokia data", "Cia yra desc apie mano mood", R.mipmap.ic_launcher_round)
+    }
+
     private fun addItem(date: String, description: String, image: Int) {
         datesList.add(date)
         descriptionsList.add(description)
         imagesList.add(image)
-    }
-
-    private fun postToList() {
-        for (i in 1..10)
-            addItem("Kazkokia data", "Cia yra desc apie mano mood", R.mipmap.ic_launcher_round)
     }
 }
