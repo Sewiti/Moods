@@ -16,11 +16,6 @@ class JournalFragment : Fragment() {
     private var descriptionsList = mutableListOf<String>()
     private var imagesList = mutableListOf<Int>()
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,9 +23,6 @@ class JournalFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_journal, container, false
         )
-
-        // Set bottom navigation to visible after intro screen
-//        (activity as MainActivity).binding.coordinatorBottom.visibility = View.VISIBLE
 
         // Set recycler view adapter
         binding.journalItemList.adapter = JournalAdapter(datesList, descriptionsList, imagesList)

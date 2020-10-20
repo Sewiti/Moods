@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import kotlinx.android.synthetic.main.fragment_intro_welcome.view.*
 import lt.seasonfive.moods.databinding.ActivityMoodBinding
 import java.util.*
 
@@ -30,8 +31,8 @@ class MoodActivity : AppCompatActivity() {
 
         binding.btnBackMood.setOnClickListener{
 
-            val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                binding.etDate.setText("" + year + " - " + month + " - " + day)
+            val datePicker = DatePickerDialog(this, R.style.MoodsDatePicker, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                binding.etDate.setText("" + year + " - " + month + " - " + dayOfMonth)
             }, year, month, day)
 
             datePicker.show()
@@ -41,7 +42,7 @@ class MoodActivity : AppCompatActivity() {
     fun onImageSelect(view: View) {
         when (view.id) {
             R.id.mood_wink -> Toast.makeText(this, "Wink", Toast.LENGTH_SHORT).show()
-            R.id.mood_relaxed -> Toast.makeText(this, "relaxed", Toast.LENGTH_SHORT).show()
+            R.id.mood_relaxed -> Toast.makeText(this, "Relaxed", Toast.LENGTH_SHORT).show()
             R.id.mood_love -> Toast.makeText(this, "Love", Toast.LENGTH_SHORT).show()
             R.id.mood_desperate -> Toast.makeText(this, "Desperate", Toast.LENGTH_SHORT).show()
             R.id.mood_poop -> Toast.makeText(this, "Poop", Toast.LENGTH_SHORT).show()
