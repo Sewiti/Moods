@@ -43,7 +43,7 @@ class CalendarFragment : Fragment() {
 
             binding.calendarItemList.adapter = JournalAdapter(datesList, descriptionsList, imagesList)
 
-            Toast.makeText(activity, "Paspaudei", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Paspaudei", Toast.LENGTH_SHORT).show()
         }
     }
 

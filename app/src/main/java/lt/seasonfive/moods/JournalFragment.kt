@@ -30,7 +30,7 @@ class JournalFragment : Fragment() {
         )
 
         // Set bottom navigation to visible after intro screen
-        (activity as MainActivity).binding.coordinatorBottom.visibility = View.VISIBLE
+//        (activity as MainActivity).binding.coordinatorBottom.visibility = View.VISIBLE
 
         // Set recycler view adapter
         binding.journalItemList.adapter = JournalAdapter(datesList, descriptionsList, imagesList)

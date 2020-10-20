@@ -24,7 +24,7 @@ class JournalAdapter(
                 Toast.makeText(
                     itemView.context,
                     "Clicked on item ${position + 1}",
-                    Toast.LENGTH_LONG
+                    Toast.LENGTH_SHORT
                 ).show()
             }
         }

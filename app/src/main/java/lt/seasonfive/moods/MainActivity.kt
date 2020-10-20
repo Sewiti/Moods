@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupFAB() {
         binding.bottomFab.setOnClickListener {view: View ->
-            Toast.makeText(this, "Fab button pressed", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Fab button pressed", Toast.LENGTH_SHORT).show()
         }
     }
 
