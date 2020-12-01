@@ -7,13 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import lt.seasonfive.moods.Models.Mood
 import lt.seasonfive.moods.databinding.FragmentCalendarBinding
 
 class CalendarFragment : Fragment() {
     private lateinit var binding: FragmentCalendarBinding
-    private var datesList = mutableListOf<String>()
-    private var descriptionsList = mutableListOf<String>()
-    private var imagesList = mutableListOf<Int>()
+    private var moods = mutableListOf<Mood>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,26 +34,24 @@ class CalendarFragment : Fragment() {
         val cv = binding.calendarView
 
         cv.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            datesList = mutableListOf()
-            descriptionsList = mutableListOf()
-            imagesList = mutableListOf()
+            moods = mutableListOf()
 
-            postToList(month.toString(), dayOfMonth.toString())
+//            postToList(month.toString(), dayOfMonth.toString())
 
-            binding.calendarItemList.adapter = JournalAdapter(datesList, descriptionsList, imagesList)
+            binding.calendarItemList.adapter = JournalAdapter(moods)
 
             Toast.makeText(activity, "Paspaudei", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun postToList(month: String, day: String) {
-        for (i in 1..5)
-            addItem(month, day, R.mipmap.ic_launcher_round)
-    }
-
-    private fun addItem(date: String, description: String, image: Int) {
-        datesList.add(date)
-        descriptionsList.add(description)
-        imagesList.add(image)
-    }
+//    private fun postToList(month: String, day: String) {
+//        for (i in 1..5)
+//            addItem(month, day, R.mipmap.ic_launcher_round)
+//    }
+//
+//    private fun addItem(date: String, description: String, image: Int) {
+//        datesList.add(date)
+//        descriptionsList.add(description)
+//        imagesList.add(image)
+//    }
 }

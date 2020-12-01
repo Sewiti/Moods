@@ -7,10 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import lt.seasonfive.moods.Models.Mood
 
 class JournalAdapter(
-    private var dates: List<String>, private var descriptions: List<String>,
-    private var images: List<Int>
+    private val data: MutableList<Mood>
 ) : RecyclerView.Adapter<JournalAdapter.JournalViewHolder>() {
 
     inner class JournalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -21,6 +21,7 @@ class JournalAdapter(
         init {
             itemView.setOnClickListener { view: View ->
                 val position: Int = adapterPosition
+                // TODO: atidaryti itema
                 Toast.makeText(
                     itemView.context,
                     "Clicked on item ${position + 1}",
@@ -31,7 +32,7 @@ class JournalAdapter(
     }
 
     override fun getItemCount(): Int {
-        return dates.size
+        return data.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JournalViewHolder {
@@ -41,8 +42,8 @@ class JournalAdapter(
     }
 
     override fun onBindViewHolder(holder: JournalViewHolder, position: Int) {
-        holder.itemDate.text = dates[position]
-        holder.itemDescription.text = descriptions[position]
-        holder.itemImage.setImageResource(images[position])
+        holder.itemDate.text = data[position].date
+        holder.itemDescription.text = data[position].description
+        holder.itemImage.setImageResource(data[position].image)
     }
 }

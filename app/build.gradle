@@ -58,5 +58,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    // Room
+    implementation "androidx.room:room-runtime:2.2.5"
+    implementation "androidx.room:room-rxjava2:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.5"
+    implementation "androidx.room:room-ktx:2.2.5"
+
+    // RX Java
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.4.10"
+
 
 }
