@@ -2,16 +2,13 @@ package lt.seasonfive.moods
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_intro_welcome.view.*
-import lt.seasonfive.moods.Data.Objects.RoomDatabase
-import lt.seasonfive.moods.Models.Mood
+import lt.seasonfive.moods.database.Objects.MoodDatabase
+import lt.seasonfive.moods.database.Mood
 import lt.seasonfive.moods.databinding.ActivityMoodBinding
 import java.util.*
 
@@ -22,7 +19,7 @@ class MoodActivity : AppCompatActivity() {
     lateinit var description: String
     var imageId: Int = 0
 
-    lateinit var database: RoomDatabase
+    lateinit var database: MoodDatabase
     var disposable: Disposable? = null
 
     lateinit var mood: Mood
@@ -31,17 +28,17 @@ class MoodActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_mood)
 
-        setDatePicker()
+        setupDatePicker()
 
         binding.btnSaveMood.setOnClickListener { view: View ->
-            mood = Mood(
-                uid = 0,
-                date = binding.etDate.text.toString(),
-                description = binding.etDescription.text.toString(),
-                image = imageId
-            )
+//            mood = Mood(
+//                uid = 0,
+//                date = binding.etDate.text.toString(),
+//                description = binding.etDescription.text.toString(),
+//                image = imageId
+//            )
 
-            Log.d("MANOMUDASNAHUI", "" + mood)
+//            Log.d("MANOMUDASNAHUI", "" + mood)
 
 //            disposable = database
 //                .getMoodsDao()
@@ -59,7 +56,7 @@ class MoodActivity : AppCompatActivity() {
 
     }
 
-    private fun setDatePicker() {
+    private fun setupDatePicker() {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)

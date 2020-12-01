@@ -1,4 +1,4 @@
-package lt.seasonfive.moods.Settings
+package lt.seasonfive.moods.settings
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

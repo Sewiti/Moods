@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import lt.seasonfive.moods.Models.Mood
+import lt.seasonfive.moods.database.Mood
 import lt.seasonfive.moods.databinding.FragmentCalendarBinding
 
 class CalendarFragment : Fragment() {
@@ -38,7 +38,7 @@ class CalendarFragment : Fragment() {
 
 //            postToList(month.toString(), dayOfMonth.toString())
 
-            binding.calendarItemList.adapter = JournalAdapter(moods)
+//            binding.calendarItemList.adapter = JournalAdapter(moods)
 
             Toast.makeText(activity, "Paspaudei", Toast.LENGTH_SHORT).show()
         }

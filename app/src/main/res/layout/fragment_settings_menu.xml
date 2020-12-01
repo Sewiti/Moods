@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:background="@drawable/shape_gradient"
-        tools:context=".Settings.SettingsFragment">
+        tools:context=".settings.SettingsFragment">
 
         <TextView
             app:layout_constraintBottom_toBottomOf="parent"

@@ -1,4 +1,4 @@
-package lt.seasonfive.moods.Intro
+package lt.seasonfive.moods.intro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

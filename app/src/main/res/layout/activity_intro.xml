@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/shape_gradient"
-        tools:context=".Intro.IntroActivity">
+        tools:context=".intro.IntroActivity">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/navHostFragment"

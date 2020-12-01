@@ -1,4 +1,4 @@
-package lt.seasonfive.moods.Intro
+package lt.seasonfive.moods.settings
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import lt.seasonfive.moods.R
-import lt.seasonfive.moods.databinding.FragmentIntroGetStartedBinding
+import lt.seasonfive.moods.databinding.FragmentSettingsMenuBinding
 
-class IntroGetStartedFragment : Fragment() {
+
+class SettingsMenuFragment : Fragment() {
+    private lateinit var binding: FragmentSettingsMenuBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,16 +21,8 @@ class IntroGetStartedFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentIntroGetStartedBinding>(
-            inflater,
-            R.layout.fragment_intro_get_started,
-            container,
-            false
-        )
-
-        binding.nextFAB.setOnClickListener {
-            activity?.finish()
-        }
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_settings_menu, container, false)
 
         return binding.root
     }
