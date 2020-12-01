@@ -1,5 +1,6 @@
 package lt.seasonfive.moods.journal
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import lt.seasonfive.moods.database.Objects.MoodDatabase
 import lt.seasonfive.moods.R
 import lt.seasonfive.moods.databinding.FragmentJournalBinding
+import lt.seasonfive.moods.MainActivity
+import lt.seasonfive.moods.MoodActivity
 
 
 class JournalFragment : Fragment() {
+    // TODO: Grab this from MainActivity or export Constants to a separate file
+    val EDIT_ITEM_REQUEST_CODE = 2
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,14 +42,17 @@ class JournalFragment : Fragment() {
         binding.journalViewModel = journalViewModel
 
 
-        journalViewModel.navigateToMood.observe(viewLifecycleOwner, { moodId ->
-            moodId?.let {
-                Toast.makeText(context, "MOOD pressed " + moodId, Toast.LENGTH_SHORT).show()
+        journalViewModel.navigateToMood.observe(viewLifecycleOwner, { mood ->
+            mood?.let {
+                val intent = Intent(context, MoodActivity::class.java)
 
-                // TODO: Navigate to edit mood
+                intent.putExtra("id", mood.id)
+                intent.putExtra("date", mood.date)
+                intent.putExtra("description", mood.description)
+                intent.putExtra("moodQuality", mood.moodQuality)
 
-                // Reset state to make sure we only navigate once, even if the device
-                // has a configuration change.
+                startActivityForResult(intent, EDIT_ITEM_REQUEST_CODE)
+
                 journalViewModel.doneNavigating()
             }
         })

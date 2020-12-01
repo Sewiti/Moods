@@ -10,7 +10,7 @@ data class Mood (
     var id: Long = 0L,
 
     @ColumnInfo(name = "date")
-    val date: Long = System.currentTimeMillis(),
+    var date: Long = System.currentTimeMillis(),
 
     @ColumnInfo(name = "description")
     var description: String = "",

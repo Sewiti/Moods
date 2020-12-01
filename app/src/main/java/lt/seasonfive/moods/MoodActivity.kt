@@ -1,108 +1,113 @@
 package lt.seasonfive.moods
 
 import android.app.DatePickerDialog
+import android.content.Intent
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import io.reactivex.disposables.Disposable
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import lt.seasonfive.moods.database.Objects.MoodDatabase
 import lt.seasonfive.moods.database.Mood
+import lt.seasonfive.moods.database.MoodDao
 import lt.seasonfive.moods.databinding.ActivityMoodBinding
 import java.util.*
 
 class MoodActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMoodBinding
-    lateinit var date: String
-    lateinit var description: String
-    var imageId: Int = 0
+    private lateinit var binding: ActivityMoodBinding
+    private lateinit var database: MoodDao
 
-    lateinit var database: MoodDatabase
-    var disposable: Disposable? = null
+    private val cal = Calendar.getInstance()
+    private var moodQuality: Int = -1
 
-    lateinit var mood: Mood
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_mood)
+        database = MoodDatabase.getInstance(application).moodDatabaseDao
 
         setupDatePicker()
 
-        binding.btnSaveMood.setOnClickListener { view: View ->
-//            mood = Mood(
-//                uid = 0,
-//                date = binding.etDate.text.toString(),
-//                description = binding.etDescription.text.toString(),
-//                image = imageId
-//            )
 
-//            Log.d("MANOMUDASNAHUI", "" + mood)
-
-//            disposable = database
-//                .getMoodsDao()
-//                .insert(mood)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe({
-//
-//                }, {
-//
-//                })
-
-
+        val id = intent?.extras?.getLong("id")
+        if (id != null) {
+            cal.timeInMillis = intent?.extras?.getLong("date")!!
+            binding.etDescription.setText(intent?.extras?.getString("description")!!)
+            moodQuality = intent?.extras?.getInt("moodQuality")!!
         }
 
+        updateDateText()
+
+        binding.btnSaveMood.setOnClickListener { view: View ->
+            if (moodQuality == -1) {
+                Toast.makeText(view.context, "You must select a mood", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val intent = Intent()
+
+            if (id != null)
+                intent.putExtra("id", id)
+            else
+                intent.putExtra("id", -1L)
+
+            intent.putExtra("date", cal.timeInMillis)
+            intent.putExtra("description", binding.etDescription.text.toString())
+            intent.putExtra("moodQuality", moodQuality)
+
+            setResult(RESULT_OK, intent)
+            finish()
+        }
     }
 
     private fun setupDatePicker() {
-        val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val year = cal.get(Calendar.YEAR)
+        val month = cal.get(Calendar.MONTH)
+        val day = cal.get(Calendar.DAY_OF_MONTH)
 
-        binding.btnBackMood.setOnClickListener{
+        binding.btnBackMood.setOnClickListener {
+            DatePickerDialog(
+                this, R.style.MoodsDatePicker,
+                { view, year, month, dayOfMonth ->
+                    cal.set(Calendar.YEAR, year)
+                    cal.set(Calendar.MONTH, month)
+                    cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-            val datePicker = DatePickerDialog(this, R.style.MoodsDatePicker, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                binding.etDate.setText("" + year + " - " + month + " - " + dayOfMonth)
-            }, year, month, day)
-
-            datePicker.show()
+                    updateDateText()
+                }, year, month, day
+            ).show()
         }
+    }
+
+    private fun updateDateText() {
+        val text = SimpleDateFormat.getDateInstance().format(cal.timeInMillis)
+        binding.etDate.setText(text)
     }
 
     fun onImageSelect(view: View) {
         when (view.id) {
             R.id.mood_wink -> {
-                Toast.makeText(this, "Wink", Toast.LENGTH_SHORT).show()
-                view.setOnClickListener {
-                    imageId = R.id.mood_wink
-                }
+                moodQuality = 0
             }
             R.id.mood_relaxed -> {
-                Toast.makeText(this, "Relaxed", Toast.LENGTH_SHORT).show()
-                view.setOnClickListener {
-                    imageId = R.id.mood_wink
-                }
+                moodQuality = 1
             }
             R.id.mood_love -> {
-                Toast.makeText(this, "Love", Toast.LENGTH_SHORT).show()
-                view.setOnClickListener {
-                    imageId = R.id.mood_wink
-                }
+                moodQuality = 2
             }
             R.id.mood_desperate -> {
-                Toast.makeText(this, "Desperate", Toast.LENGTH_SHORT).show()
-                view.setOnClickListener {
-                    imageId = R.id.mood_wink
-                }
+                moodQuality = 3
             }
             R.id.mood_poop -> {
-                Toast.makeText(this, "Poop", Toast.LENGTH_SHORT).show()
-                view.setOnClickListener {
-                    imageId = R.id.mood_wink
-                }
+                moodQuality = 4
             }
         }
     }

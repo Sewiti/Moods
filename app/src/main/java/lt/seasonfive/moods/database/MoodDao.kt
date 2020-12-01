@@ -7,16 +7,16 @@ import lt.seasonfive.moods.database.Mood
 @Dao
 interface MoodDao {
     @Insert
-    fun insert(mood: Mood)
+    suspend fun insert(mood: Mood)
 
     @Update
-    fun update(mood: Mood)
+    suspend fun update(mood: Mood)
 
     @Query("SELECT * from moods_table WHERE id = :id")
-    fun get(id: Long): Mood?
+    suspend fun get(id: Long): Mood?
 
     @Query("DELETE FROM moods_table WHERE id = :id")
-    fun delete(id: Long)
+    suspend fun delete(id: Long)
 
     @Query("SELECT * FROM moods_table ORDER BY date DESC")
     fun getAllMoods() : LiveData<List<Mood>>
