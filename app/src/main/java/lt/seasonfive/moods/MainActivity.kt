@@ -12,6 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import lt.seasonfive.moods.calendar.CalendarFragment
 import lt.seasonfive.moods.database.Mood
 import lt.seasonfive.moods.database.MoodDao
 import lt.seasonfive.moods.database.Objects.MoodDatabase
@@ -105,14 +106,14 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        Toast.makeText(baseContext, "RESULT" + requestCode, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(baseContext, "RESULT" + requestCode, Toast.LENGTH_SHORT).show()
 
         if (resultCode != RESULT_OK)
             return
 
         val mood = Mood()
-        val id = data?.extras?.getLong("id")
-        if (id != null && id >= 0) {
+        val id = data?.extras?.getLong("id", -1L)!!
+        if (id >= 0L) {
             mood.id = id
         }
 
@@ -120,9 +121,11 @@ class MainActivity : AppCompatActivity() {
         mood.description = data.extras?.getString("description")!!
         mood.moodQuality = data.extras?.getInt("moodQuality")!!
 
+        Toast.makeText(baseContext, "" + mood.date, Toast.LENGTH_SHORT).show()
+
         MainScope().launch {
             withContext(Dispatchers.IO) {
-                if (id != null && id >= 0)
+                if (id >= 0L)
                     database.update(mood)
                 else
                     database.insert(mood)

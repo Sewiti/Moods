@@ -36,9 +36,8 @@ class MoodActivity : AppCompatActivity() {
 
         setupDatePicker()
 
-
-        val id = intent?.extras?.getLong("id")
-        if (id != null) {
+        val id = intent?.extras?.getLong("id", -1)
+        if (id != null && id >= 0L) {
             cal.timeInMillis = intent?.extras?.getLong("date")!!
             binding.etDescription.setText(intent?.extras?.getString("description")!!)
             moodQuality = intent?.extras?.getInt("moodQuality")!!
@@ -54,11 +53,7 @@ class MoodActivity : AppCompatActivity() {
 
             val intent = Intent()
 
-            if (id != null)
-                intent.putExtra("id", id)
-            else
-                intent.putExtra("id", -1L)
-
+            intent.putExtra("id", id)
             intent.putExtra("date", cal.timeInMillis)
             intent.putExtra("description", binding.etDescription.text.toString())
             intent.putExtra("moodQuality", moodQuality)
@@ -69,6 +64,9 @@ class MoodActivity : AppCompatActivity() {
     }
 
     private fun setupDatePicker() {
+//        cal.set(Calendar.HOUR, 0)
+//        cal.set(Calendar.MINUTE, 0)
+//        cal.set(Calendar.MILLISECOND, 0)
         val year = cal.get(Calendar.YEAR)
         val month = cal.get(Calendar.MONTH)
         val day = cal.get(Calendar.DAY_OF_MONTH)

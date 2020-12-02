@@ -17,9 +17,6 @@ import lt.seasonfive.moods.MoodActivity
 
 
 class JournalFragment : Fragment() {
-    // TODO: Grab this from MainActivity or export Constants to a separate file
-    val EDIT_ITEM_REQUEST_CODE = 2
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,8 +36,6 @@ class JournalFragment : Fragment() {
         val journalViewModel =
             ViewModelProvider(this, viewModelFactory).get(JournalViewModel::class.java)
 
-        binding.journalViewModel = journalViewModel
-
 
         journalViewModel.navigateToMood.observe(viewLifecycleOwner, { mood ->
             mood?.let {
@@ -51,7 +46,7 @@ class JournalFragment : Fragment() {
                 intent.putExtra("description", mood.description)
                 intent.putExtra("moodQuality", mood.moodQuality)
 
-                startActivityForResult(intent, EDIT_ITEM_REQUEST_CODE)
+                startActivityForResult(intent, 2)
 
                 journalViewModel.doneNavigating()
             }
