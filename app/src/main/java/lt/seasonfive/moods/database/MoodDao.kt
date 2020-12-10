@@ -23,4 +23,13 @@ interface MoodDao {
 
     @Query("SELECT * FROM moods_table WHERE date >= :from AND date < :to ORDER BY date DESC")
     suspend fun getMoodsByDate(from: Long, to: Long) : List<Mood>
+
+    @Query("SELECT COUNT(id) FROM moods_table")
+    fun getTotalMoods() : LiveData<Int>
+
+    @Query("SELECT AVG(mood) FROM moods_table ")
+    fun getAvgMoodAllTime() : LiveData<Float>
+
+    @Query("SELECT AVG(mood) FROM moods_table WHERE date >= :from AND date < :to")
+    suspend fun getAvg(from: Long, to: Long) : Float
 }

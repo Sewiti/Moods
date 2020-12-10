@@ -12,8 +12,8 @@ fun ImageView.setSleepImage(item: Mood?) {
     item?.let {
         setImageResource(when (item.moodQuality) {
             0 -> R.drawable.mood_wink
-            1 -> R.drawable.mood_relaxed
-            2 -> R.drawable.mood_love
+            1 -> R.drawable.mood_love
+            2 -> R.drawable.mood_relaxed
             3 -> R.drawable.mood_desperate
             4 -> R.drawable.mood_poop
             else -> R.drawable.mood_poop

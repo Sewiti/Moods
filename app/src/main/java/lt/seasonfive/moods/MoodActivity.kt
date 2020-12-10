@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.icu.text.SimpleDateFormat
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -61,6 +62,12 @@ class MoodActivity : AppCompatActivity() {
             setResult(RESULT_OK, intent)
             finish()
         }
+
+        binding.btnBackMood.setOnClickListener {
+            val intent = Intent()
+            setResult(RESULT_CANCELED, intent)
+            finish()
+        }
     }
 
     private fun setupDatePicker() {
@@ -71,7 +78,7 @@ class MoodActivity : AppCompatActivity() {
         val month = cal.get(Calendar.MONTH)
         val day = cal.get(Calendar.DAY_OF_MONTH)
 
-        binding.btnBackMood.setOnClickListener {
+        binding.btnDate.setOnClickListener {
             DatePickerDialog(
                 this, R.style.MoodsDatePicker,
                 { view, year, month, dayOfMonth ->
@@ -95,10 +102,10 @@ class MoodActivity : AppCompatActivity() {
             R.id.mood_wink -> {
                 moodQuality = 0
             }
-            R.id.mood_relaxed -> {
+            R.id.mood_love -> {
                 moodQuality = 1
             }
-            R.id.mood_love -> {
+            R.id.mood_relaxed -> {
                 moodQuality = 2
             }
             R.id.mood_desperate -> {

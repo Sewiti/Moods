@@ -14,4 +14,9 @@
     <string name="bottom_nav_stats">Statistics</string>
     <string name="bottom_nav_calendar">Calendar</string>
     <string name="bottom_nav_settings">Settings</string>
+    <string name="total_stats">You have recorded %1$d Moods!</string>
+    <string name="avg_all_time_stats">Your all time average mood</string>
+    <string name="all_time_average_mood_content_desc">All time average mood</string>
+    <string name="average_mood_last_7_days_content_desc">Average mood last 7 days</string>
+    <string name="your_average_mood_in_last_7_days">Your average mood in last 7 days</string>
 </resources>

@@ -20,6 +20,7 @@ import lt.seasonfive.moods.intro.IntroActivity
 import lt.seasonfive.moods.journal.JournalFragment
 import lt.seasonfive.moods.settings.SettingsFragment
 import lt.seasonfive.moods.databinding.ActivityMainBinding
+import lt.seasonfive.moods.statistics.StatisticsFragment
 
 
 class MainActivity : AppCompatActivity() {

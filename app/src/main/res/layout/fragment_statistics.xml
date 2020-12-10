@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:background="@drawable/shape_gradient"
-        tools:context=".StatisticsFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="@drawable/shape_gradient"
+            tools:context=".statistics.StatisticsFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-    <FrameLayout
-        android:id="@+id/barChartWeek"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/totalTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/total_stats"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:id="@+id/textViewAvgMood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/avg_all_time_stats"
+                android:textSize="21sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewAvgMood"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewAvgMood"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageViewAvgMood" />
+
+            <ImageView
+                android:id="@+id/imageViewAvgMood"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/all_time_average_mood_content_desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalTextView"
+                app:srcCompat="@drawable/mood_poop" />
+
+            <TextView
+                android:id="@+id/textViewAvgMood7D"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/your_average_mood_in_last_7_days"
+                android:textSize="21sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewAvgMood7D"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewAvgMood7D"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageViewAvgMood7D" />
+
+            <ImageView
+                android:id="@+id/imageViewAvgMood7D"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/average_mood_last_7_days_content_desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewAvgMood"
+                app:srcCompat="@drawable/mood_poop" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
