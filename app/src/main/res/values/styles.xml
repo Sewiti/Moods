@@ -25,6 +25,23 @@
         <item name="colorAccent">@color/lightPink</item>
     </style>
 
+    <style name="MoodsAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/darkPurple</item>
+
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveAlertButtonStyle</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/PositiveAlertButtonStyle</item>
+
+        <item name="colorAccent">@color/lightPink</item>
+    </style>
+
+    <style name="PositiveAlertButtonStyle">
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
     <style name="NavigationBar" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <!-- Customize your theme here. -->

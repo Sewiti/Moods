@@ -46,6 +46,9 @@ class JournalAdapter(val clickListener: MoodListener) : ListAdapter<DataItem,
         fun bind(clickListener: MoodListener, item: Mood) {
             binding.mood = item
             binding.clickListener = clickListener
+            binding.itemCardView.setOnLongClickListener {
+                clickListener.onLongClick(item)
+            }
             binding.executePendingBindings()
         }
 
@@ -76,8 +79,9 @@ class MoodDiffCallback : DiffUtil.ItemCallback<DataItem>() {
     }
 }
 
-class MoodListener(val clickListener: (moodId: Long) -> Unit) {
+class MoodListener(val clickListener: (moodId: Long) -> Unit, val longClickListener: (moodId: Long) -> Boolean) {
     fun onClick(mood: Mood) = clickListener(mood.id)
+    fun onLongClick(mood: Mood) = longClickListener(mood.id)
 }
 
 sealed class DataItem {

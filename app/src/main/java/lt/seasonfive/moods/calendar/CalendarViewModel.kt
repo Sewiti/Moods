@@ -55,6 +55,13 @@ class CalendarViewModel(
     }
 
 
+    fun deleteMood(moodId: Long) {
+        viewModelScope.launch {
+            database.delete(moodId)
+        }
+    }
+
+
     fun doneNavigating() {
         _navigateToMood.value = null
     }
