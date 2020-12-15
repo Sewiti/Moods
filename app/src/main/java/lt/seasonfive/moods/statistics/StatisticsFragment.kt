@@ -48,7 +48,7 @@ class StatisticsFragment : Fragment() {
         })
 
         statisticsViewModel.avgMoodLast7D.observe(viewLifecycleOwner, {
-            Toast.makeText(context,"Avg: " + it, Toast.LENGTH_LONG).show()
+//            Toast.makeText(context,"Avg: " + it, Toast.LENGTH_LONG).show()
 
             it?.let {
 

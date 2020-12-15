@@ -1,4 +1,4 @@
-package lt.seasonfive.moods.settings
+package lt.seasonfive.moods.about
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import lt.seasonfive.moods.R
 
 
-class SettingsFragment : Fragment() {
+class AboutFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedinstancestate: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        return inflater.inflate(R.layout.fragment_about, container, false)
     }
 }

@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,7 +17,7 @@ import lt.seasonfive.moods.database.MoodDao
 import lt.seasonfive.moods.database.Objects.MoodDatabase
 import lt.seasonfive.moods.intro.IntroActivity
 import lt.seasonfive.moods.journal.JournalFragment
-import lt.seasonfive.moods.settings.SettingsFragment
+import lt.seasonfive.moods.about.AboutFragment
 import lt.seasonfive.moods.databinding.ActivityMainBinding
 import lt.seasonfive.moods.statistics.StatisticsFragment
 
@@ -68,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.settingsFragmentMenuItem -> {
-                    replaceFragment(SettingsFragment())
+                    replaceFragment(AboutFragment())
                     true
                 }
                 else -> false
