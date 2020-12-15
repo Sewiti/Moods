@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -31,6 +32,8 @@ class StatisticsFragment : Fragment() {
         val statisticsViewModel =
             ViewModelProvider(this, viewModelFactory).get(StatisticsViewModel::class.java)
 
+        statisticsViewModel.onCreate()
+
         statisticsViewModel.total.observe(viewLifecycleOwner, {
             it?.let {
                 binding.totalTextView.text = getString(R.string.total_stats, it)
@@ -45,11 +48,16 @@ class StatisticsFragment : Fragment() {
         })
 
         statisticsViewModel.avgMoodLast7D.observe(viewLifecycleOwner, {
+            Toast.makeText(context,"Avg: " + it, Toast.LENGTH_LONG).show()
+
             it?.let {
+
                 val img = getImage(it)
                 binding.imageViewAvgMood7D.setImageResource(img)
             }
         })
+
+        binding.lifecycleOwner = this
 
         return binding.root
     }

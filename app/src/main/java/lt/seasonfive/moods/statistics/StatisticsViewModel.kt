@@ -19,7 +19,7 @@ class StatisticsViewModel(
 
     private val _avgMoodLast7D = MutableLiveData<Float>()
     val avgMoodLast7D
-        get() = _avgMoodLast7D as LiveData<Float>
+        get() = _avgMoodLast7D
 
     fun onCreate() {
         val cal = Calendar.getInstance()
@@ -28,8 +28,8 @@ class StatisticsViewModel(
         cal.set(Calendar.MINUTE, 0)
         cal.set(Calendar.MILLISECOND, 0)
 
-        val to = cal.timeInMillis
-        val from = to - 604800000L
+        val to = cal.timeInMillis + 86400000L
+        val from = to - 7*86400000L
 
         viewModelScope.launch {
             _avgMoodLast7D.value = database.getAvg(from, to)

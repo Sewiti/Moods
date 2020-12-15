@@ -38,8 +38,8 @@ class CalendarViewModel(
         _cal.set(Calendar.MINUTE, 0)
         _cal.set(Calendar.MILLISECOND, 0)
 
-        val to = _cal.timeInMillis
-        val from = to - 86400000L
+        val from = _cal.timeInMillis
+        val to = from + 86400000L
 
         viewModelScope.launch {
             _moods.value = database.getMoodsByDate(from, to)
@@ -72,8 +72,8 @@ class CalendarViewModel(
         _cal.set(Calendar.MONTH, month)
         _cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-        val to = _cal.timeInMillis
-        val from = to - 86400000L
+        val from = _cal.timeInMillis
+        val to = from + 86400000L
 
         viewModelScope.launch {
             _moods.value = database.getMoodsByDate(from, to)

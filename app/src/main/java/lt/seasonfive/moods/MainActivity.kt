@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         mood.description = data.extras?.getString("description")!!
         mood.moodQuality = data.extras?.getInt("moodQuality")!!
 
-        Toast.makeText(baseContext, "" + mood.date, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(baseContext, "" + mood.date, Toast.LENGTH_SHORT).show()
 
         MainScope().launch {
             withContext(Dispatchers.IO) {
